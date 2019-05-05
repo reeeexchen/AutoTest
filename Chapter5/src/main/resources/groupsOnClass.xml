@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="suitename">
+    <test name="runAll">
+        <classes>
+            <class name="top.rex.testng.groups.GroupsOnClass1"/>
+            <class name="top.rex.testng.groups.GroupsOnClass2"/>
+            <class name="top.rex.testng.groups.GroupsOnClass3"/>
+        </classes>
+    </test>
+    
+    <test name="runStu">
+        <groups>
+            <run>
+                <include name="stu"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="top.rex.testng.groups.GroupsOnClass1"/>
+            <class name="top.rex.testng.groups.GroupsOnClass2"/>
+            <class name="top.rex.testng.groups.GroupsOnClass3"/>
+        </classes>
+    </test>
+</suite>
