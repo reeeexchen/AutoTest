@@ -1,0 +1,20 @@
+server:
+  port: 8999
+
+logging:
+  path: logs
+  file: logger.log
+
+spring:
+  application:
+    name: MybatisApplication
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssh?useUnicode=true&characterEncoding=utf8&useSSL=true
+    username: root
+    password: mysqlroot
+
+mybatis:
+  type-aliases-package: top.rex.code.model
+  mapper-locations:
+    - mapper/*

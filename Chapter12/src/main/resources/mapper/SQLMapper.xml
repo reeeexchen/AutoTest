@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper,如果有多个mapper文件，这个必须唯一 -->
+<mapper namespace="top.rex.code.model">
+
+    <!-- 获取登陆接口CASE -->
+    <select id="caseUserLogin" parameterType="Integer" resultType="top.rex.code.model.CaseLogin">
+        SELECT * FROM case_login
+        WHERE id = #{id};
+    </select>
+
+    <!--  添加用户接口CASE  -->
+    <select id="caseAddUser" parameterType="Integer" resultType="top.rex.code.model.CaseAddUser">
+        SELECT * FROM case_addUser WHERE id = #{id};
+    </select>
+
+    <!--  获取用户信息CASE  -->
+    <select id="caseGetUserInfo" parameterType="Integer" resultType="top.rex.code.model.CaseGetUserInfo">
+        SELECT * FROM case_getUserInfo WHERE id = #{id};
+    </select>
+
+    <!--  获取用户列表CASE  -->
+    <select id="caseGetUserList" parameterType="Integer" resultType="top.rex.code.model.CaseGetUserList">
+        SELECT * FROM case_getUserList WHERE id = #{id};
+    </select>
+
+    <!--  更新、删除用户列表CASE  -->
+    <select id="caseUpdateUser" parameterType="Integer" resultType="top.rex.code.model.CaseUpdateUser">
+        SELECT * FROM case_updateUserInfo WHERE id = #{id};
+    </select>
+
+
+    <!--  添加用户信息  -->
+    <select id="addUser" parameterType="top.rex.code.model.CaseAddUser" resultType="top.rex.code.model.User">
+        SELECT * FROM ssh.m_user
+        WHERE username = #{username}
+        AND  password = #{password}
+        and sex = #{sex}
+        and age = #{age}
+        and permission = #{permission}
+        and isDelete = #{isDelete}
+    </select>
+
+    <!--  获取用户信息  -->
+    <select id="getUserInfo" parameterType="top.rex.code.model.CaseGetUserInfo" resultType="top.rex.code.model.User">
+        SELECT * FROM ssh.m_user WHERE id = #{userId};
+    </select>
+
+    <!--  获取用户列表  -->
+    <select id="getUserList" parameterType="top.rex.code.model.CaseGetUserList" resultType="top.rex.code.model.User">
+        SELECT * FROM ssh.m_user
+        <trim prefix="WHERE" prefixOverrides="AND">
+            <if test="username != null and username != ''">
+                AND username = #{username}
+            </if>
+            <if test="age != null">
+                AND age = #{age}
+            </if>
+            <if test="sex != null">
+                AND sex = #{sex}
+            </if>
+        </trim>
+    </select>
+
+    <!--  获取更新后用户信息  -->
+    <select id="getUpdateUserInfo" parameterType="top.rex.code.model.CaseUpdateUser"
+            resultType="top.rex.code.model.User">
+        SELECT * FROM ssh.m_user
+        <trim prefix="WHERE" prefixOverrides="AND">
+            <if test="username != null and username != ''">
+                AND username = #{username}
+            </if>
+            <if test="age != null">
+                AND age = #{age}
+            </if>
+            <if test="sex != null">
+                AND sex = #{sex}
+            </if>
+            <if test="permission != null">
+                AND permission = #{permission}
+            </if>
+            <if test="isDelete != null">
+                AND isDelete = #{isDelete}
+            </if>
+        </trim>
+        AND id = #{userId}
+    </select>
+</mapper>

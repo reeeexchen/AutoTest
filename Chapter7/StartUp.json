@@ -1,0 +1,11 @@
+[
+  {
+    "description": "THIS IS THE FIRST MOCK SAMPLE",
+    "request": {
+      "uri": "/demo"
+    },
+    "response": {
+      "text": "FIRST SUCCESS RESPONSE"
+    }
+  }
+]

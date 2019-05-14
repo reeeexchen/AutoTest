@@ -1,0 +1,25 @@
+[
+  {
+    "description": "带Header的POST请求",
+    "request": {
+      "uri": "/post/headers",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "json": {
+        "name": "rex",
+        "age": "20"
+      }
+    },
+    "response": {
+      "json": {
+        "code": 200,
+        "message": "SUCCESS"
+      },
+      "headers": {
+        "Content-Type": "text/html;charset=utf-8"
+      }
+    }
+  }
+]

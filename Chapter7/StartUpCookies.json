@@ -1,0 +1,59 @@
+[
+  {
+    "description": "返回Cookie的GET请求",
+    "request": {
+      "uri": "/getCookies",
+      "method": "GET"
+    },
+    "response": {
+      "text": "获取成功",
+      "cookies": {
+        "login": "true"
+      },
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "带Cookie的GET请求",
+    "request": {
+      "uri": "/get/cookie",
+      "method": "GET",
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "text": "需要Cookie的GET请求",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "带Cookie的POST请求",
+    "request": {
+      "uri": "/post/cookie",
+      "method": "POST",
+      "cookies": {
+        "login": "true"
+      },
+      "json": {
+        "name": "rex",
+        "age": "18"
+      }
+    },
+    "response": {
+      "status": 200,
+      "json": {
+        "description": "需要Cookie的POST请求",
+        "message": "SUCCESS",
+        "code": 200
+      },
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  }
+]

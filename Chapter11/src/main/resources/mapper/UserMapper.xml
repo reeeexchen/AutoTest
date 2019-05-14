@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.rex.code">
+    <select id="getUserCount" resultType="Integer">
+        SELECT COUNT(*)
+        FROM m_user;
+    </select>
+
+    <insert id="addUser" parameterType="top.rex.code.model.User">
+        INSERT INTO m_user(name, age, sex)
+        VALUES (#{name}, #{age}, #{sex})
+    </insert>
+
+    <update id="updateUser" parameterType="top.rex.code.model.User">
+        UPDATE m_user
+        set name = #{name},
+            age  = #{age},
+            sex  = #{sex}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="Integer">
+        DELETE
+        FROM m_user
+        WHERE id = #{id}
+    </delete>
+</mapper>

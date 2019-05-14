@@ -1,0 +1,32 @@
+[
+  {
+    "description": "模拟一个POST请求",
+    "request": {
+      "uri": "/postDemo",
+      "method": "POST"
+    },
+    "response": {
+      "text": "POST请求的响应",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "带参数的POST请求",
+    "request": {
+      "uri": "/postParam",
+      "method": "POST",
+      "forms": {
+        "name": "REX",
+        "age": "21"
+      }
+    },
+    "response": {
+      "text": "带参数POST的响应",
+      "headers": {
+        "Content-Type": "text/html;charset=gbk"
+      }
+    }
+  }
+]

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="用户管理系统测试套件">
+    <test name="用户管理系统测试用例">
+        <classes>
+            <class name="top.rex.code.cases.LoginTest">
+                <methods>
+                    <include name="loginTrue"/>
+                    <include name="loginFalse"/>
+                </methods>
+            </class>
+            <class name="top.rex.code.cases.AddUserTest">
+                <methods>
+                    <include name="addUserCase"/>
+                </methods>
+            </class>
+            <class name="top.rex.code.cases.GetUserInfoTest">
+                <methods>
+                    <include name="getUserInfoCase"/>
+                </methods>
+            </class>
+            <class name="top.rex.code.cases.GetUserListTest">
+                <methods>
+                    <include name="getListUserCase"/>
+                </methods>
+            </class>
+            <class name="top.rex.code.cases.UpdateUserInfoTest">
+                <methods>
+                    <include name="updateUserInfoCase"/>
+                    <include name="deleteUserInfoCase"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="top.rex.code.config.ExtentTestNGIReporterListener"/>
+    </listeners>
+</suite>
