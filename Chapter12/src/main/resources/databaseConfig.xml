@@ -16,10 +16,9 @@
                 <property name="username" value="root"/>
                 <!-- 数据库密码 -->
                 <property name="password" value="Mysqlroot,1"/>
-                <property name="poolMaximumActiveConnections" value="12" />
-                <property name="poolMaximumIdleConnections" value="8" />
-                <property name="poolMaximumCheckoutTime" value="15" />
-                <property name="poolTimeToWait" value="10" />
+                <property name="maxActive" value="8"/>
+                <property name="maxIdle" value="8"/>
+                <property name="minIdle" value="1"/>
             </dataSource>
         </environment>
     </environments>
