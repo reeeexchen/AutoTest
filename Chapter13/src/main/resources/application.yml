@@ -12,7 +12,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/ssh?useUnicode=true&characterEncoding=utf8&useSSL=true
     username: root
-    password: mysqlroot
+    password: Mysqlroot,1
 
 mybatis:
   type-aliases-package: top.rex.code.model

@@ -14,7 +14,7 @@
                 <!-- 数据库用户 -->
                 <property name="username" value="root"/>
                 <!-- 数据库密码 -->
-                <property name="password" value="mysqlroot"/>
+                <property name="password" value="Mysqlroot,1"/>
             </dataSource>
         </environment>
     </environments>
