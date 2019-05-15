@@ -8,18 +8,18 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <!-- 加载数据库驱动 -->
-                <property name="JDBC.Driver" value="com.mysql.jdbc.Driver"/>
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <!-- 数据库连接地址 -->
-                <property name="JDBC.ConnectionURL"
+                <property name="url"
                           value="jdbc:mysql://localhost:3306/ssh?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=true"/>
                 <!-- 数据库用户 -->
-                <property name="JDBC.Username" value="root"/>
+                <property name="username" value="root"/>
                 <!-- 数据库密码 -->
-                <property name="JDBC.Password" value="Mysqlroot,1"/>
-                <!-- 最大链接数 -->
-                <property name="Pool.MaximumIdleConnections" value="5"/>
-                <!-- 最大等待时间 -->
-                <property name="Pool.MaximumWait" value="60000"/>
+                <property name="password" value="Mysqlroot,1"/>
+                <property name="poolMaximumActiveConnections" value="12" />
+                <property name="poolMaximumIdleConnections" value="8" />
+                <property name="poolMaximumCheckoutTime" value="15" />
+                <property name="poolTimeToWait" value="10" />
             </dataSource>
         </environment>
     </environments>
