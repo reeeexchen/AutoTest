@@ -66,6 +66,7 @@ public class LoginTest {
     public void loginTrue() {
         SqlSession session = DatabaseUtil.getSqlSession();
         CaseLogin caseLogin = session.selectOne("caseUserLogin", 1);
+        session.close();
         System.out.println(caseLogin);
         System.out.println(TestConfig.userLoginUrl);
         // 登录请求
@@ -79,6 +80,7 @@ public class LoginTest {
     public void loginFalse() {
         SqlSession session = DatabaseUtil.getSqlSession();
         CaseLogin caseLogin = session.selectOne("caseUserLogin", 2);
+        session.close();
         System.out.println(caseLogin);
         System.out.println(TestConfig.userLoginUrl);
         // 登录请求
