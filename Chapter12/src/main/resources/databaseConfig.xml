@@ -6,15 +6,20 @@
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
+            <dataSource type="DHCP">
                 <!-- 加载数据库驱动 -->
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="JDBC.Driver" value="com.mysql.jdbc.Driver"/>
                 <!-- 数据库连接地址 -->
-                <property name="url" value="jdbc:mysql://localhost:3306/ssh?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=true"/>
+                <property name="JDBC.ConnectionURL"
+                          value="jdbc:mysql://localhost:3306/ssh?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=true"/>
                 <!-- 数据库用户 -->
-                <property name="username" value="root"/>
+                <property name="JDBC.Username" value="root"/>
                 <!-- 数据库密码 -->
-                <property name="password" value="Mysqlroot,1"/>
+                <property name="JDBC.Password" value="Mysqlroot,1"/>
+                <!-- 最大链接数 -->
+                <property name="Pool.MaximumIdleConnections" value="5"/>
+                <!-- 最大等待时间 -->
+                <property name="Pool.MaximumWait" value="60000"/>
             </dataSource>
         </environment>
     </environments>
