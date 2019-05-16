@@ -10,7 +10,7 @@ spring:
     name: Chapter13Application
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ssh
+    url: jdbc:mysql://120.77.150.79:3306/ssh
     username: root
     password: Mysqlroot,1
 
