@@ -7,7 +7,7 @@
     <!--  登录  -->
     <select id="loginUser" parameterType="top.rex.code.model.User" resultType="Integer">
         SELECT COUNT(*)
-        FROM ssh.m_user
+        FROM m_user
         WHERE username = #{username}
           AND password = #{password}
     </select>

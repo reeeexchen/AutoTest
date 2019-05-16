@@ -34,10 +34,10 @@ public class UserController {
     @PostMapping("/login")
     public Boolean loginUser(HttpServletResponse response, @RequestBody User user) {
         Boolean result = (Integer) template.selectOne("loginUser", user) == 1;
-        Cookie cookie = new Cookie("login", "true");
-        response.addCookie(cookie);
         log.info("查询结果为：" + result);
         if (result) {
+            Cookie cookie = new Cookie("login", "true");
+            response.addCookie(cookie);
             log.info("用户是：" + user.getUsername());
         }
         return result;

@@ -57,7 +57,7 @@ public class LoginTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(result);
+        System.out.println("--- " + result + " ----");
         return result;
 
     }
@@ -71,7 +71,6 @@ public class LoginTest {
         System.out.println("--- " + TestConfig.userLoginUrl + " ----");
         // 登录请求
         String result = getResult(caseLogin);
-        System.out.println("--- " + result + " ----");
         // 验证登录结果
         Assert.assertEquals(caseLogin.getExpected(), result);
     }
@@ -86,7 +85,6 @@ public class LoginTest {
         System.out.println("--- " + TestConfig.userLoginUrl + " ----");
         // 登录请求
         String result = getResult(caseLogin);
-        System.out.println("--- " + result + " ----");
         // 验证登录结果
         Assert.assertEquals(caseLogin.getExpected(), result);
     }
