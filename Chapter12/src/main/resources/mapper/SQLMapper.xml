@@ -12,22 +12,22 @@
 
     <!--  添加用户接口CASE  -->
     <select id="caseAddUser" parameterType="Integer" resultType="top.rex.code.model.CaseAddUser">
-        SELECT * FROM case_addUser WHERE id = #{id};
+        SELECT * FROM case_adduser WHERE id = #{id};
     </select>
 
     <!--  获取用户信息CASE  -->
     <select id="caseGetUserInfo" parameterType="Integer" resultType="top.rex.code.model.CaseGetUserInfo">
-        SELECT * FROM case_getUserInfo WHERE id = #{id};
+        SELECT * FROM case_getuserinfo WHERE id = #{id};
     </select>
 
     <!--  获取用户列表CASE  -->
     <select id="caseGetUserList" parameterType="Integer" resultType="top.rex.code.model.CaseGetUserList">
-        SELECT * FROM case_getUserList WHERE id = #{id};
+        SELECT * FROM case_getuserlist WHERE id = #{id};
     </select>
 
     <!--  更新、删除用户列表CASE  -->
     <select id="caseUpdateUser" parameterType="Integer" resultType="top.rex.code.model.CaseUpdateUser">
-        SELECT * FROM case_updateUserInfo WHERE id = #{id};
+        SELECT * FROM case_updateuserinfo WHERE id = #{id};
     </select>
 
 
