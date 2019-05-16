@@ -3,11 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="top.rex.code">
+<mapper namespace="top.rex.code.model">
     <!--  登录  -->
     <select id="loginUser" parameterType="top.rex.code.model.User" resultType="Integer">
         SELECT COUNT(*)
-        FROM m_user
+        FROM ssh.m_user
         WHERE username = #{username}
           AND password = #{password}
     </select>
