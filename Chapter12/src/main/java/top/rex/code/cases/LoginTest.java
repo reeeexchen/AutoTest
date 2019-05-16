@@ -41,17 +41,17 @@ public class LoginTest {
     private String getResult(CaseLogin caseLogin) {
         HttpPost post = new HttpPost(TestConfig.userLoginUrl);
         JSONObject param = new JSONObject();
-        param.put("username",caseLogin.getUsername());
-        param.put("password",caseLogin.getPassword());
+        param.put("username", caseLogin.getUsername());
+        param.put("password", caseLogin.getPassword());
         // 设置头信息
-        post.setHeader("Content-Type","application/json");
-        StringEntity entity = new StringEntity(param.toString(),"UTF-8");
+        post.setHeader("Content-Type", "application/json");
+        StringEntity entity = new StringEntity(param.toString(), "UTF-8");
         post.setEntity(entity);
         // 返回结果
         String result = null;
         try {
             HttpResponse response = TestConfig.defaultHttpClient.execute(post);
-            result = EntityUtils.toString(response.getEntity(),"UTF-8");
+            result = EntityUtils.toString(response.getEntity(), "UTF-8");
             // 设置Cookies赋值
             TestConfig.cookieStore = TestConfig.defaultHttpClient.getCookieStore();
         } catch (IOException e) {
@@ -67,10 +67,11 @@ public class LoginTest {
         SqlSession session = DatabaseUtil.getSqlSession();
         CaseLogin caseLogin = session.selectOne("caseUserLogin", 1);
         session.close();
-        System.out.println(caseLogin);
-        System.out.println(TestConfig.userLoginUrl);
+        System.out.println("--- " + caseLogin + " ----");
+        System.out.println("--- " + TestConfig.userLoginUrl + " ----");
         // 登录请求
         String result = getResult(caseLogin);
+        System.out.println("--- " + result + " ----");
         // 验证登录结果
         Assert.assertEquals(caseLogin.getExpected(), result);
     }
@@ -81,10 +82,11 @@ public class LoginTest {
         SqlSession session = DatabaseUtil.getSqlSession();
         CaseLogin caseLogin = session.selectOne("caseUserLogin", 2);
         session.close();
-        System.out.println(caseLogin);
-        System.out.println(TestConfig.userLoginUrl);
+        System.out.println("--- " + caseLogin + " ----");
+        System.out.println("--- " + TestConfig.userLoginUrl + " ----");
         // 登录请求
         String result = getResult(caseLogin);
+        System.out.println("--- " + result + " ----");
         // 验证登录结果
         Assert.assertEquals(caseLogin.getExpected(), result);
     }
