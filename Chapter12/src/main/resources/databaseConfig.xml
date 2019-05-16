@@ -11,7 +11,7 @@
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <!-- 数据库连接地址 -->
                 <property name="url"
-                          value="jdbc:mysql://120.77.150.79:3306/ssh"/>
+                          value="jdbc:mysql://120.77.150.79:3306/ssh?useSSL=true"/>
                 <!-- 数据库用户 -->
                 <property name="username" value="root"/>
                 <!-- 数据库密码 -->
