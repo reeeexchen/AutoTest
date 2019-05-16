@@ -6,28 +6,28 @@
 
     <!-- 获取登陆接口CASE -->
     <select id="caseUserLogin" parameterType="Integer" resultType="top.rex.code.model.CaseLogin">
-        SELECT * FROM case_login
+        SELECT * FROM ssh.case_login
         WHERE id = #{id};
     </select>
 
     <!--  添加用户接口CASE  -->
     <select id="caseAddUser" parameterType="Integer" resultType="top.rex.code.model.CaseAddUser">
-        SELECT * FROM case_adduser WHERE id = #{id};
+        SELECT * FROM ssh.case_adduser WHERE id = #{id};
     </select>
 
     <!--  获取用户信息CASE  -->
     <select id="caseGetUserInfo" parameterType="Integer" resultType="top.rex.code.model.CaseGetUserInfo">
-        SELECT * FROM case_getuserinfo WHERE id = #{id};
+        SELECT * FROM ssh.case_getuserinfo WHERE id = #{id};
     </select>
 
     <!--  获取用户列表CASE  -->
     <select id="caseGetUserList" parameterType="Integer" resultType="top.rex.code.model.CaseGetUserList">
-        SELECT * FROM case_getuserlist WHERE id = #{id};
+        SELECT * FROM ssh.case_getuserlist WHERE id = #{id};
     </select>
 
     <!--  更新、删除用户列表CASE  -->
     <select id="caseUpdateUser" parameterType="Integer" resultType="top.rex.code.model.CaseUpdateUser">
-        SELECT * FROM case_updateuserinfo WHERE id = #{id};
+        SELECT * FROM ssh.case_updateuserinfo WHERE id = #{id};
     </select>
 
 
